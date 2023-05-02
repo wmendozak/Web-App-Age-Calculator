@@ -1,0 +1,35 @@
+﻿@model WebAgeApp.Models.Ages
+@{
+    ViewData["Title"] = "Age Calculator";
+}
+
+<div class="text-center">
+
+    <h1 class="display-4">Find Your Age</h1>
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Get))
+{
+    <span style="color:blue">Insert your Birth Date:</span>
+
+    @*<input type="date" name="inputBirthdate" />*@
+    
+    
+    @Html.EditorFor(modelitem => modelitem.Birthdate ) 
+
+    <input type="submit" name="submit" value="Click To See Age" class="button" />
+    
+    
+
+    <span>&nbsp;</span>
+    <br/>
+    <h2 class="display-2">
+    @Html.DisplayFor(modelitem => modelitem.Age ) 
+    </h2>
+    
+}
+</div>
+@section Scripts{
+    @{
+
+    }
+}
